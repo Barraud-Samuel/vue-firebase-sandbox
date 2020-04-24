@@ -8,6 +8,8 @@ import messages from './messages';
 import auth from './auth';
 import chat from './chat';
 import books from './books';
+import book from './book';
+import author from './author';
 
 
 Vue.use(Vuex)
@@ -26,6 +28,8 @@ export default new Vuex.Store({
     employee,
     messages,
     chat,
-    books
+    books,
+    book,
+    author
   }
 })

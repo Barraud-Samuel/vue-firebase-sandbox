@@ -11,7 +11,7 @@ const state = {
 
 const actions = {
   fetchBooks: firestoreAction(({ bindFirestoreRef }) => {
-    bindFirestoreRef('books', db.collection('books')/* .where('user_id','==',firebase.auth().currentUser.uid) */)
+    return bindFirestoreRef('books', db.collection('books'))
   }),
 };
 

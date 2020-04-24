@@ -30,13 +30,20 @@ export default {
     }
   },
   created() {
-    this.fetchBooks();
+    this.RetreiveBooks();
   },
   computed: {
     ...mapState('books', ['books']),
   },
   methods: {
-    ...mapActions('books', ['fetchBooks'])
+    ...mapActions('books', ['fetchBooks']),
+    async RetreiveBooks(){
+      await this.fetchBooks().then(e=>{
+        console.log(e);
+      },err=>{
+        console.log(err);
+      })
+    }
   },
 }
 </script>

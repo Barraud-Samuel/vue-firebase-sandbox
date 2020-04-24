@@ -12,6 +12,7 @@ import Login from '../views/Login.vue';
 import Register from '../views/Register.vue';
 import Chat from '../views/Chat.vue';
 import ViewBook from '../views/ViewBook.vue';
+import ViewAuthor from '../views/ViewAuthor.vue';
 import firebase from '@/firebase'
 
 
@@ -91,6 +92,14 @@ Vue.use(VueRouter)
     path: '/book/:book_id',
     name: 'view-book',
     component: ViewBook,
+    meta:{
+      requiresAuth: false
+    }
+  },
+  {
+    path: '/author/:author_id',
+    name: 'view-author',
+    component: ViewAuthor,
     meta:{
       requiresAuth: false
     }

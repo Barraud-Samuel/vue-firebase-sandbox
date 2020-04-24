@@ -11,7 +11,9 @@
     <router-link to="/dashboard" class="btn grey">Back</router-link>
     <button @click="deleteEmployee" class="btn right red">Delete</button>
     <div class="fixed-action-btn" v-if="employee">
-      <router-link v-if="employee.employee_id" :to="{name:'edit-employee',params: {employee_id: employee.employee_id}}" class="btn-floating btn-large red">
+      <router-link v-if="employee.employee_id" 
+        :to="{name:'edit-employee',params: {employee_id: employee.employee_id}}" 
+        class="btn-floating btn-large red">
         <i class="large material-icons">mode_edit</i>
       </router-link>
     </div>
