@@ -2,13 +2,12 @@
   <div id="dashboard">
     <ul class="collection with-header">
       <li class="collection-header">
-        <h4>Employees</h4>
+        <h4>Livres</h4>
       </li>
-      <li v-for="employee in employees" :key="employee.id" class="collection-item">
-        <div class="chip">{{employee.dept}}</div>
-        {{employee.employee_id}}:{{employee.name}}
-
-        <router-link class="secondary-content" :to="{name:'view-employee',params: {employee_id: employee.employee_id}}">
+      <li v-for="book in books" :key="book.id" class="collection-item">
+        <p>{{book.id}}</p>
+        <p>{{book.title}}</p>
+        <router-link  :to="{name:'view-book',params: {book_id: book.id}}">
           <i class="material-icons">remove_red_eye</i>
           </router-link>
       </li>
@@ -32,13 +31,13 @@ export default {
     }
   },
   created() {
-    this.fetchEmployees();
+    this.fetchBooks();
   },
   computed: {
-    ...mapState('employees', ['employees']),
+    ...mapState('books', ['books']),
   },
   methods: {
-    ...mapActions('employees', ['fetchEmployees'])
+    ...mapActions('books', ['fetchBooks'])
   },
 }
 </script>

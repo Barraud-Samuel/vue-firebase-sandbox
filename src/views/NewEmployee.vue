@@ -1,24 +1,30 @@
 <template>
   <div id="new-employee">
-    <h3>New Employee</h3>
+    <h3>Ajouter un livre</h3>
     <div class="row">
-      <form @submit.prevent="saveEmployee" class="col s12">
+      <form @submit.prevent="saveBook" class="col s12">
         <div class="row">
           <div class="input-field col s12">
-            <input type="text" v-model="employee.name" required>
-            <label>Name</label>
+            <input type="text" v-model="book.titre" required>
+            <label>titre</label>
           </div>
         </div>
         <div class="row">
           <div class="input-field col s12">
-            <input type="text" v-model="employee.dept" required>
-            <label>Dept</label>
+            <input type="text" v-model="book.desc" required>
+            <label>Description</label>
           </div>
         </div>
         <div class="row">
           <div class="input-field col s12">
-            <input type="text" v-model="employee.position" required>
-            <label>Position</label>
+            <input type="text" v-model="book.image" required>
+            <label>image</label>
+          </div>
+        </div>
+         <div class="row">
+          <div class="input-field col s12">
+            <input type="text" v-model="book.author" required>
+            <label>Auteur</label>
           </div>
         </div>
         <button type="submit" class="btn">Submit</button>
@@ -36,20 +42,22 @@ import {  mapActions } from 'vuex';
 export default {
   name:'new-employee',
   data: () =>({
-    employee:{
-      name:'',
-      dept:'',
-      position:''
+    book:{
+      titre:'',
+      desc:'',
+      image:'',
+      'author':''
     }
   }),
   methods: {
-    ...mapActions('employee', ['createEmployee']),
-      saveEmployee(){
-        this.createEmployee(this.employee);
-        this.employee = {
-          name:'',
-          dept:'',
-          position:''
+    ...mapActions('book', ['createEmployee']),
+      saveBook(){
+        this.createEmployee(this.book);
+        this.book = {
+          titre:'',
+          desc:'',
+          image:'',
+          author:''
         }
     }
   },
