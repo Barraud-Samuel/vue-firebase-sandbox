@@ -37,6 +37,9 @@ const actions = {
       })
     });
   }),
+  deleteBook: firestoreAction(({bindFirestoreRef},book_id)=>{
+    return books.doc(book_id).delete();
+  })
 };
 
 export default {

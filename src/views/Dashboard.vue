@@ -10,6 +10,7 @@
         <router-link  :to="{name:'view-book',params: {book_id: book.id}}">
           <i class="material-icons">remove_red_eye</i>
           </router-link>
+          <button @click="deleteBook(book.id)" class="btn right red">Delete</button>
       </li>
     </ul>
     <div class="fixed-action-btn">
@@ -37,7 +38,8 @@ export default {
     ...mapState('books', ['books']),
   },
   methods: {
-    ...mapActions('books', ['fetchBooks'])
+    ...mapActions('books', ['fetchBooks']),
+    ...mapActions('book', ['deleteBook'])
   },
 }
 </script>

@@ -5,25 +5,25 @@
       <form @submit.prevent="saveBook" class="col s12">
         <div class="row">
           <div class="input-field col s12">
-            <input type="text" v-model="book.titre" required>
+            <input type="text" v-model="book.title" required>
             <label>titre</label>
           </div>
         </div>
         <div class="row">
           <div class="input-field col s12">
-            <input type="text" v-model="book.desc" required>
+            <input type="text" v-model="book.desc">
             <label>Description</label>
           </div>
         </div>
         <div class="row">
           <div class="input-field col s12">
-            <input type="text" v-model="book.image" required>
+            <input type="text" v-model="book.image">
             <label>image</label>
           </div>
         </div>
          <div class="row">
           <div class="input-field col s12">
-            <input type="text" v-model="book.author" required>
+            <input type="text" v-model="book.author">
             <label>Auteur</label>
           </div>
         </div>
@@ -43,18 +43,18 @@ export default {
   name:'new-employee',
   data: () =>({
     book:{
-      titre:'',
+      title:'',
       desc:'',
       image:'',
       'author':''
     }
   }),
   methods: {
-    ...mapActions('book', ['createEmployee']),
+    ...mapActions('book', ['createBook']),
       saveBook(){
-        this.createEmployee(this.book);
+        this.createBook(this.book);
         this.book = {
-          titre:'',
+          title:'',
           desc:'',
           image:'',
           author:''
